@@ -11,7 +11,7 @@ import (
 
 func main() {
 	start := time.Now()
-	dat, _ := ioutil.ReadFile("res/day1-input")
+	dat, _ := ioutil.ReadFile("res/input")
 	nums := strings.Split(string(dat), "\n")
 	total := 0
 	for i := 0; i < len(nums); i++ {
