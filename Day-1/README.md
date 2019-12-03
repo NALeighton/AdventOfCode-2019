@@ -1,6 +1,6 @@
 # Day 1
 
-The premise of day was is to calculate the amount of fuel required to launch a rocket given the mass of all of the modules. The equation for the calculation being: `⌊ mass / 3 ⌋ - 2`.
+The premise of day is to calculate the amount of fuel required to launch a rocket given the mass of all of the modules. The equation for the calculation being: `⌊ mass / 3 ⌋ - 2`.
 
 ## Part 1
 
