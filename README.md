@@ -18,6 +18,8 @@ A part of the fun of Advent of Code is creating not only a working solution, but
 | Day 2 - Part 2 | 1.6244489 | 0.155580128740038 |
 | Day 3 - Part 1 | 221.9307624 | 4.086840613 |
 | Day 3 - Part 2 | 236.7890906 | 3.4485745452 |
+| Day 4 - Part 1 | 0.969711 | 0.0177385986 |
+| Day 4 - Part 2 | 31.2656715 | 0.979624262 |
 
 ## Repository Structure
 
