@@ -16,6 +16,8 @@ func checkDouble(num int) bool {
 	flag := false
 	if len(triple) == 2 {
 		flag = false
+	} else if len(double) == 3 && len(triple) == 1 {
+		flag = true
 	} else if len(double) > 1 && len(triple) == 1 {
 		flag = (double[0][0] != triple[0][0] || double[1][0] != triple[0][0])
 	} else if len(double) == 1 && len(triple) == 1 {
@@ -37,7 +39,6 @@ func main() {
 						for a := b; a <= 9; a++ {
 							num := a + (b * 10) + (c * 100) + (d * 1000) + (e * 10000) + (f * 100000)
 							if num > 145852 {
-								fmt.Println(num, checkDouble(num))
 								if checkDouble(num) {
 									count++
 								}
