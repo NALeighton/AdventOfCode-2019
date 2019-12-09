@@ -62,22 +62,6 @@ func main() {
 			ops[ops[i+3]] = add(getVal(1, ops[i+1]), getVal(1, ops[i+2]))
 			i += 4
 			break
-		case 10001:
-			ops[ops[i+3]] = add(getVal(0, ops[i+1]), getVal(0, ops[i+2]))
-			i += 4
-			break
-		case 10101:
-			ops[ops[i+3]] = add(getVal(1, ops[i+1]), getVal(0, ops[i+2]))
-			i += 4
-			break
-		case 11001:
-			ops[ops[i+3]] = add(getVal(0, ops[i+1]), getVal(1, ops[i+2]))
-			i += 4
-			break
-		case 11101:
-			ops[ops[i+3]] = add(getVal(1, ops[i+1]), getVal(1, ops[i+2]))
-			i += 4
-			break
 
 		// MULTIPLY
 		case 2:
@@ -93,22 +77,6 @@ func main() {
 			i += 4
 			break
 		case 1102:
-			ops[ops[i+3]] = multiply(getVal(1, ops[i+1]), getVal(1, ops[i+2]))
-			i += 4
-			break
-		case 10002:
-			ops[ops[i+3]] = multiply(getVal(0, ops[i+1]), getVal(0, ops[i+2]))
-			i += 4
-			break
-		case 10102:
-			ops[ops[i+3]] = multiply(getVal(1, ops[i+1]), getVal(0, ops[i+2]))
-			i += 4
-			break
-		case 11002:
-			ops[ops[i+3]] = multiply(getVal(0, ops[i+1]), getVal(1, ops[i+2]))
-			i += 4
-			break
-		case 11102:
 			ops[ops[i+3]] = multiply(getVal(1, ops[i+1]), getVal(1, ops[i+2]))
 			i += 4
 			break
