@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-var input int = 8
+var input int = 5
 var ops []int
 
 func add(a int, b int) int {
@@ -117,21 +117,29 @@ func main() {
 		case 5:
 			if getVal(0, ops[i+1]) != 0 {
 				i = getVal(0, ops[i+2])
+			} else {
+				i += 3
 			}
 			break
 		case 105:
 			if getVal(1, ops[i+1]) != 0 {
 				i = getVal(0, ops[i+2])
+			} else {
+				i += 3
 			}
 			break
 		case 1005:
 			if getVal(0, ops[i+1]) != 0 {
 				i = getVal(1, ops[i+2])
+			} else {
+				i += 3
 			}
 			break
 		case 1105:
 			if getVal(1, ops[i+1]) != 0 {
 				i = getVal(1, ops[i+2])
+			} else {
+				i += 3
 			}
 			break
 
@@ -139,88 +147,66 @@ func main() {
 		case 6:
 			if getVal(0, ops[i+1]) == 0 {
 				i = getVal(0, ops[i+2])
+			} else {
+				i += 3
 			}
 			break
 		case 106:
 			if getVal(1, ops[i+1]) == 0 {
 				i = getVal(0, ops[i+2])
+			} else {
+				i += 3
 			}
 			break
 		case 1006:
 			if getVal(0, ops[i+1]) == 0 {
 				i = getVal(1, ops[i+2])
+			} else {
+				i += 3
 			}
 			break
 		case 1106:
 			if getVal(1, ops[i+1]) == 0 {
 				i = getVal(1, ops[i+2])
+			} else {
+				i += 3
 			}
 			break
+
+		// LESS THAN
 		case 7:
-			less(getVal(0, ops[i+1]), getVal(0, ops[i+2]), getVal(0, ops[i+3]))
-			i += 5
+			less(getVal(0, ops[i+1]), getVal(0, ops[i+2]), ops[i+3])
+			i += 4
 			break
 		case 107:
-			less(getVal(1, ops[i+1]), getVal(0, ops[i+2]), getVal(0, ops[i+3]))
-			i += 5
+			less(getVal(1, ops[i+1]), getVal(0, ops[i+2]), ops[i+3])
+			i += 4
 			break
 		case 1007:
-			less(getVal(0, ops[i+1]), getVal(1, ops[i+2]), getVal(0, ops[i+3]))
-			i += 5
+			less(getVal(0, ops[i+1]), getVal(1, ops[i+2]), ops[i+3])
+			i += 4
 			break
 		case 1107:
-			less(getVal(1, ops[i+1]), getVal(1, ops[i+2]), getVal(0, ops[i+3]))
-			i += 5
-			break
-		case 10007:
-			less(getVal(0, ops[i+1]), getVal(0, ops[i+2]), getVal(1, ops[i+3]))
-			i += 5
-			break
-		case 10107:
-			less(getVal(1, ops[i+1]), getVal(0, ops[i+2]), getVal(1, ops[i+3]))
-			i += 5
-			break
-		case 11007:
-			less(getVal(0, ops[i+1]), getVal(1, ops[i+2]), getVal(1, ops[i+3]))
-			i += 5
-			break
-		case 11107:
-			less(getVal(1, ops[i+1]), getVal(1, ops[i+2]), getVal(1, ops[i+3]))
-			i += 5
+			less(getVal(1, ops[i+1]), getVal(1, ops[i+2]), ops[i+3])
+			i += 4
 			break
 
 		// EQUAL
 		case 8:
-			eq(getVal(0, ops[i+1]), getVal(0, ops[i+2]), getVal(0, ops[i+3]))
-			i += 5
+			eq(getVal(0, ops[i+1]), getVal(0, ops[i+2]), ops[i+3])
+			i += 4
 			break
 		case 108:
-			eq(getVal(1, ops[i+1]), getVal(0, ops[i+2]), getVal(0, ops[i+3]))
-			i += 5
+			eq(getVal(1, ops[i+1]), getVal(0, ops[i+2]), ops[i+3])
+			i += 4
 			break
 		case 1008:
-			eq(getVal(0, ops[i+1]), getVal(1, ops[i+2]), getVal(0, ops[i+3]))
-			i += 5
+			eq(getVal(0, ops[i+1]), getVal(1, ops[i+2]), ops[i+3])
+			i += 4
 			break
 		case 1108:
-			eq(getVal(1, ops[i+1]), getVal(1, ops[i+2]), getVal(0, ops[i+3]))
-			i += 5
-			break
-		case 10008:
-			eq(getVal(0, ops[i+1]), getVal(0, ops[i+2]), getVal(1, ops[i+3]))
-			i += 5
-			break
-		case 10108:
-			eq(getVal(1, ops[i+1]), getVal(0, ops[i+2]), getVal(1, ops[i+3]))
-			i += 5
-			break
-		case 11008:
-			eq(getVal(0, ops[i+1]), getVal(1, ops[i+2]), getVal(1, ops[i+3]))
-			i += 5
-			break
-		case 11108:
-			eq(getVal(1, ops[i+1]), getVal(1, ops[i+2]), getVal(1, ops[i+3]))
-			i += 5
+			eq(getVal(1, ops[i+1]), getVal(1, ops[i+2]), ops[i+3])
+			i += 4
 			break
 
 		// HALT
@@ -232,6 +218,7 @@ func main() {
 		default:
 			cont = false
 			fmt.Printf("BAD OP-CODE: %d\n", ops[i])
+			break
 		}
 		if cont == false {
 			break
