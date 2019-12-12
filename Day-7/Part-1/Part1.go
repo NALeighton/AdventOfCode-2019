@@ -8,8 +8,13 @@ import (
 	"time"
 )
 
-var input int = 5
+var input int
+var first bool = true
+var output int
 var ops []int
+var master []int
+var highest int = -999999999
+var hI int = 01234
 
 func add(a int, b int) int {
 	return a + b
@@ -27,11 +32,17 @@ func getVal(mode int, input int) int {
 }
 
 func getInput(pos int) {
-	ops[pos] = input
+	if first {
+		ops[pos] = input
+		first = false
+	} else {
+		ops[pos] = output
+		first = true
+	}
 }
 
 func handleOutput(val int) {
-	fmt.Println(val)
+	output = val
 }
 
 func less(a int, b int, c int) {
@@ -50,14 +61,7 @@ func eq(a int, b int, c int) {
 	}
 }
 
-func main() {
-	start := time.Now()
-	dat, _ := ioutil.ReadFile("res/input")
-	nums := strings.Split(string(dat), ",")
-	for _, o := range nums {
-		i, _ := strconv.Atoi(o)
-		ops = append(ops, i)
-	}
+func run() {
 	cont := true
 	for i := 0; i < (len(ops)); {
 		switch ops[i] {
@@ -224,6 +228,49 @@ func main() {
 			break
 		}
 	}
+}
+
+func nextPerm(p []int) {
+	for i := len(p) - 1; i >= 0; i-- {
+		if i == 0 || p[i] < len(p)-i-1 {
+			p[i]++
+			return
+		}
+		p[i] = 0
+	}
+}
+
+func getPerm(orig, p []int) []int {
+	result := append([]int{}, orig...)
+	for i, v := range p {
+		result[i], result[i+v] = result[i+v], result[i]
+	}
+	return result
+}
+
+func main() {
+	start := time.Now()
+	dat, _ := ioutil.ReadFile("res/input")
+	nums := strings.Split(string(dat), ",")
+	for _, o := range nums {
+		i, _ := strconv.Atoi(o)
+		master = append(master, i)
+	}
+	orig := []int{0, 1, 2, 3, 4}
+	for p := make([]int, len(orig)); p[0] < len(p); nextPerm(p) {
+		ops = master
+		perm := getPerm(orig, p)
+		output = 0
+		for i := 0; i < 5; i++ {
+			input = perm[i]
+			run()
+		}
+		if output > highest {
+			highest = output
+			hI = input
+		}
+	}
+	fmt.Println(highest)
 	end := time.Now()
 	fmt.Println(end.Sub(start))
 }
