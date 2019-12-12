@@ -25,7 +25,7 @@ For the first part, the rule set was as follows:
 
 ## Part 2
 
-For the first part, the rule set is everything from part 1 plus:
+For the second part, the rule set is everything from part 1 plus:
 * Repeated digits can only be repeated twice
     * 112233 - Valid
     * 111234 - Invalid

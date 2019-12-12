@@ -16,7 +16,7 @@ For the first part, two more opcodes were added to the valid instruction set.
 
 ## Part 2
 
-For the first part, another four additional opcodes were added.
+For the second part, another four additional opcodes were added.
 * `5` - jump if true
 * `6` - jump if false
 * `7` - less than

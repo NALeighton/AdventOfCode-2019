@@ -14,7 +14,7 @@ For the first part, the closest intersection is found by using the manhattan dis
 
 ## Part 2
 
-For the first part, the closest intersection is found by using the sum of the length of the wires at the intersection. The length only being counted from the origin to the intersection.
+For the second part, the closest intersection is found by using the sum of the length of the wires at the intersection. The length only being counted from the origin to the intersection.
 
 ### Execution Time
 
